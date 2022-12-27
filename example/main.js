@@ -1,5 +1,5 @@
 function setup() {
-    createBackground(400, 400, color(55, 204, 0));
+    createColorBg(400, 400, color(55, 204, 0));
 }
 
 function draw() {

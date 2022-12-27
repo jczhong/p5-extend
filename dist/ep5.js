@@ -26,7 +26,7 @@ eval("/*! p5.js v1.5.0 October 18, 2022 */\n!function(e){ true?module.exports=e(
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n\n\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.createBackground) = function (width, height, color) {\n    createCanvas(width, height);\n    background(color);\n};\n\n//# sourceURL=webpack://p5-extend/./src/background.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n\n\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.createColorBg) = function (width, height, color) {\n    createCanvas(width, height);\n    background(color);\n};\n\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.createImageBg) = function (width, height, image) {\n    createCanvas(width, height);\n    background(image);\n};\n\n//# sourceURL=webpack://p5-extend/./src/background.js?");
 
 /***/ })
 
