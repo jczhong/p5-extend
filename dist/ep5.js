@@ -26,7 +26,29 @@ eval("/*! p5.js v1.5.0 October 18, 2022 */\n!function(e){ true?module.exports=e(
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n\n\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.createColorBg) = function (width, height, color) {\n    createCanvas(width, height);\n    background(color);\n};\n\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.createImageBg) = function (width, height, image) {\n    createCanvas(width, height);\n    background(image);\n};\n\n//# sourceURL=webpack://p5-extend/./src/background.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//width, height, color/image\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawBg) = function () {\n    const width = arguments[0];\n    const height = arguments[1];\n    this.createCanvas(width, height);\n    \n    const thirdParam = arguments[2];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(thirdParam)) {\n        this.background(thirdParam);\n    } else if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isImage)(thirdParam)) {\n        this.background(thirdParam);\n    }\n};\n\n//# sourceURL=webpack://p5-extend/./src/background.js?");
+
+/***/ }),
+
+/***/ "./src/rect.js":
+/*!*********************!*\
+  !*** ./src/rect.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//mode, x, y, width, height, color\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawRect) = function () {\n    let index = -1;\n    if (arguments[0] === this.CORNER || \n        arguments[0] === this.CORNERS ||\n        arguments[0] === this.CENTER || \n        arguments[0] === this.RADIUS) {\n        this.rectMode(arguments[0]);\n        index = 0;\n    }\n\n    const x = arguments[index + 1];\n    const y = arguments[index + 2];\n    const width = arguments[index + 3];\n    const height = arguments[index + 4];\n\n    const color = arguments[index + 5];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(color)) {\n        this.fill(color);\n    }\n\n    this.rect(x, y, width, height);\n};\n\n//# sourceURL=webpack://p5-extend/./src/rect.js?");
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"isColor\": () => (/* binding */ isColor),\n/* harmony export */   \"isImage\": () => (/* binding */ isImage)\n/* harmony export */ });\nfunction isColor(obj) {\n    return (obj !== undefined && obj !== null && 'mode' in obj && obj.mode === 'rgb');\n}\n\nfunction isImage(obj) {\n    return (obj !== undefined && obj !== null && 'canvas' in obj && 'pixels' in obj);\n}\n\n//# sourceURL=webpack://p5-extend/./src/utils.js?");
 
 /***/ })
 
@@ -114,7 +136,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/background.js");
+/******/ 	__webpack_require__("./src/background.js");
+/******/ 	__webpack_require__("./src/rect.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/utils.js");
 /******/ 	
 /******/ })()
 ;
