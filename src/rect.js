@@ -20,6 +20,8 @@ p5.prototype.drawRect = function () {
     const color = arguments[index + 5];
     if (isColor(color)) {
         this.fill(color);
+    } else {
+        this.fill(0);
     }
 
     this.rect(x, y, width, height);

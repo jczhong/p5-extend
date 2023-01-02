@@ -30,6 +30,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__
 
 /***/ }),
 
+/***/ "./src/circle.js":
+/*!***********************!*\
+  !*** ./src/circle.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//x, y, d, color\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawCircle) = function () {\n    const x = arguments[0];\n    const y = arguments[1];\n    const d = arguments[2];\n\n    const color = arguments[3];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(color)) {\n        this.fill(color);\n    } else {\n        this.fill(0);\n    }\n\n    this.circle(x, y, d);\n};\n\n//# sourceURL=webpack://p5-extend/./src/circle.js?");
+
+/***/ }),
+
+/***/ "./src/line.js":
+/*!*********************!*\
+  !*** ./src/line.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//x1, y1, x2, y2, stroke color/weight\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawLine) = function () {\n    const x1 = arguments[0];\n    const y1 = arguments[1];\n    const x2 = arguments[2];\n    const y2 = arguments[3];\n\n    let setColor = false;\n    let setWeight = false;\n    for(let index = 4; index < arguments.length; index++) {\n        const param = arguments[index];\n        if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(param)) {\n            this.stroke(param);\n            setColor = true;\n        } else if (typeof param === 'number') {\n            this.strokeWeight(param);\n            setWeight = true;\n        }\n    }\n    \n    //default\n    if (!setColor) {\n        this.stroke(0);\n    }\n    if (!setWeight) {\n        this.strokeWeight(1);\n    }\n\n    this.line(x1, y1, x2, y2);\n};\n\n//# sourceURL=webpack://p5-extend/./src/line.js?");
+
+/***/ }),
+
+/***/ "./src/point.js":
+/*!**********************!*\
+  !*** ./src/point.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//x, y, color\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawDot) = function () {\n    const x = arguments[0];\n    const y = arguments[1];\n\n    const param = arguments[2];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(param)) {\n        this.stroke(param);\n    } else {\n        this.stroke(0);\n    }\n    this.strokeWeight(1);\n\n    this.point(x, y);\n};\n\n//# sourceURL=webpack://p5-extend/./src/point.js?");
+
+/***/ }),
+
 /***/ "./src/rect.js":
 /*!*********************!*\
   !*** ./src/rect.js ***!
@@ -37,7 +70,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//mode, x, y, width, height, color\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawRect) = function () {\n    let index = -1;\n    if (arguments[0] === this.CORNER || \n        arguments[0] === this.CORNERS ||\n        arguments[0] === this.CENTER || \n        arguments[0] === this.RADIUS) {\n        this.rectMode(arguments[0]);\n        index = 0;\n    }\n\n    const x = arguments[index + 1];\n    const y = arguments[index + 2];\n    const width = arguments[index + 3];\n    const height = arguments[index + 4];\n\n    const color = arguments[index + 5];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(color)) {\n        this.fill(color);\n    }\n\n    this.rect(x, y, width, height);\n};\n\n//# sourceURL=webpack://p5-extend/./src/rect.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ \"./node_modules/p5/lib/p5.min.js\");\n/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\n\n\n//mode, x, y, width, height, color\n(p5__WEBPACK_IMPORTED_MODULE_0___default().prototype.drawRect) = function () {\n    let index = -1;\n    if (arguments[0] === this.CORNER || \n        arguments[0] === this.CORNERS ||\n        arguments[0] === this.CENTER || \n        arguments[0] === this.RADIUS) {\n        this.rectMode(arguments[0]);\n        index = 0;\n    }\n\n    const x = arguments[index + 1];\n    const y = arguments[index + 2];\n    const width = arguments[index + 3];\n    const height = arguments[index + 4];\n\n    const color = arguments[index + 5];\n    if ((0,_utils__WEBPACK_IMPORTED_MODULE_1__.isColor)(color)) {\n        this.fill(color);\n    } else {\n        this.fill(0);\n    }\n\n    this.rect(x, y, width, height);\n};\n\n//# sourceURL=webpack://p5-extend/./src/rect.js?");
 
 /***/ }),
 
@@ -48,7 +81,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var p5__
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"isColor\": () => (/* binding */ isColor),\n/* harmony export */   \"isImage\": () => (/* binding */ isImage)\n/* harmony export */ });\nfunction isColor(obj) {\n    return (obj !== undefined && obj !== null && 'mode' in obj && obj.mode === 'rgb');\n}\n\nfunction isImage(obj) {\n    return (obj !== undefined && obj !== null && 'canvas' in obj && 'pixels' in obj);\n}\n\n//# sourceURL=webpack://p5-extend/./src/utils.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"isColor\": () => (/* binding */ isColor),\n/* harmony export */   \"isImage\": () => (/* binding */ isImage)\n/* harmony export */ });\nfunction isColor(obj) {\n    return (\n        obj !== undefined && \n        obj !== null &&\n        typeof obj === 'object' &&\n        'mode' in obj && \n        obj.mode === 'rgb'\n    );\n}\n\nfunction isImage(obj) {\n    return (\n        obj !== undefined && \n        obj !== null && \n        typeof obj === 'object' &&\n        'canvas' in obj && \n        'pixels' in obj\n    );\n}\n\n//# sourceURL=webpack://p5-extend/./src/utils.js?");
 
 /***/ })
 
@@ -137,6 +170,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./src/background.js");
+/******/ 	__webpack_require__("./src/circle.js");
+/******/ 	__webpack_require__("./src/line.js");
+/******/ 	__webpack_require__("./src/point.js");
 /******/ 	__webpack_require__("./src/rect.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/utils.js");
 /******/ 	
